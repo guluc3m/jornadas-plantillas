@@ -1,0 +1,170 @@
+\documentclass{beamer}
+
+\usetheme{simple}
+
+\usepackage{lmodern}
+\usepackage[scale=2]{ccicons}
+
+\usepackage[utf8]{inputenc} % No olvides utilizar UTF8, especialmente si tu presentación está en castellano
+
+\def\edicion{ % Cambiar para las siguientes jornadas
+XXVII
+}
+
+\title{Demo} % Modifica el título de la presentación a tu gusto
+\subtitle{Basada en la demo de introducción a Beamer de ShareLaTeX.com y el tema Simple por Facundo Muñoz} % Incluye un subtítulo si lo ves necesario
+\author{GUL} % Cambia el autor de la presentación.
+\institute{\edicion Jornadas Técnicas del GUL} % Esto no lo cambies
+\date{Noviembre 2016} % Esto tampoco
+
+\begin{document}
+
+{
+    \usebackgroundtemplate{%
+        \parbox[c][\paperheight][c]{\paperwidth}{
+            \centering\tikz\node[opacity=0.3] {\includegraphics[height=7cm]{img/logo1.png}};
+        }
+    }
+    \setbeamertemplate{footline}{}
+    \begin{frame}
+        \titlepage
+    \end{frame}
+}
+\addtocounter{framenumber}{-1}
+
+%\setwatermark{\includegraphics[height=8cm]{img/logo1.png}}
+
+% ------------------------------------------------------------------------------------------
+% La presentación empieza aquí. La primera diapositiva puede dejarse tal cual o sustituirse.
+% ------------------------------------------------------------------------------------------
+
+\begin{frame}
+    \frametitle{Tabla de contenidos} % Puedes ponerle un título más chulo a la diapositiva con el índice de contenidos o dejar éste
+    \tableofcontents
+\end{frame}
+
+% La demo empieza aquí
+\section{Demo}
+
+% Texto estándar
+\subsection{Texto}
+
+\begin{frame}
+    \frametitle{Texto}
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+\end{frame}
+
+% Listas
+\subsection{Listas}
+
+\begin{frame}
+    \frametitle{Lista}
+    \begin{itemize}
+    \item Point A
+    \item Point B
+    \begin{itemize}
+        \item part 1
+        \item part 2
+    \end{itemize}
+    \item Point C
+    \item Point D
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Lista numerada}
+    \begin{enumerate}[I]
+    \item Point A
+    \item Point B
+        \begin{enumerate}[i]
+        \item part 1
+        \item part 2
+        \end{enumerate}
+    \item Point C
+    \item Point D
+    \end{enumerate}    
+\end{frame}
+
+% Columns
+\subsection{Columnas}
+
+\begin{frame}
+    \frametitle{Columnas}
+    \begin{columns}
+    \column{0.4\textwidth}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    \column{0.4\textwidth}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    \end{columns}
+\end{frame}
+
+% Bloques y código
+\subsection{Bloques y código}
+
+\begin{frame}[fragile] % No olvides pasarle el comando fragile a la diapositiva si quieres usar verbatim para mostrar código
+    \frametitle{Bloques y código}
+    \begin{block}{Este código no tiene sentido} % Puede dársele un título al bloque o dejar el texto entre las llaves en blanco
+        % Verbatim respeta las tabulaciones. No las incluyas por respetar la indexación del documento si no quieres que se incluyan también en el documento final
+        \begin{verbatim} 
+for i in range(1, 5):
+  print i
+else:
+  print "The for loop is over"
+        \end{verbatim}
+    \end{block}
+\end{frame}
+
+% Imágenes
+\subsection{Imágenes}
+
+\begin{frame}
+    \frametitle{Imágenes}
+    \begin{figure}
+        \includegraphics[scale=0.5]{img/logo1.png}
+        \caption{Logo del GUL}
+    \end{figure}
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+\end{frame}
+
+% Tablas
+\subsection{Tablas}
+
+\begin{frame}
+    \frametitle{Tablas}
+    \begin{table}
+        \begin{tabular}{l | c | c | c | c }
+            Name & Swim & Cycle & Run & Total \\
+            \hline \hline
+            John T & 13:04 & 24:15 & 18:34 & 55:53 \\ 
+            Norman P & 8:00 & 22:45 & 23:02 & 53:47\\
+            Alex K & 14:00 & 28:00 & n/a & n/a\\
+            Sarah H & 9:22 & 21:10 & 24:03 & 54:35 
+        \end{tabular}
+        \caption{Tiempos}
+    \end{table}
+\end{frame}
+
+% Varios elementos
+\subsection{Mezcla de elementos}
+
+\begin{frame}[fragile]
+    \frametitle{Imágenes y bloques en columnas}
+    \begin{columns}
+        \column{0.4\textwidth}
+            \begin{figure}
+                \includegraphics[scale=0.5]{img/logo1.png}
+                \caption{Logo del GUL}
+            \end{figure}
+        \column{0.5\textwidth}
+            \begin{block}{Pueden unirse varios elementos en una misma diapositiva} % Puede dársele un título al bloque o dejar el texto entre las llaves en blanco
+                \begin{verbatim}
+for i in range(1, 5):
+  print i
+else:
+  print "The for loop is over"
+                \end{verbatim}
+            \end{block}
+    \end{columns}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,124 @@
+% Copyright 2015 by Facundo Muñoz
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+
+
+\ProvidesPackage{beamerthemesimple}
+
+%\def\beamer@simplecolor{gris}
+%\DeclareOptionBeamer{color}{\beamer@simplecolor=#1}
+%\ExecuteOptionsBeamer{gris}
+%\ProcessOptionsBeamer
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,trees,positioning,fadings}
+
+\input xkeyval
+
+\newcommand<>{\includeoverlaygraphics}[2][]
+{
+  \begin{tikzpicture}
+    \alt#3{\node[opacity=1] {\includegraphics[#1]{#2}};}
+          {\node[opacity=.15] {\includegraphics[#1]{#2}};}
+  \end{tikzpicture}
+}
+
+% These define macros \KV@setwatermark@hoffset that take one argument
+% which is processed by the last piece of codes into braces
+\def\@hos{}
+\def\@vos{}
+\def\@alpha{} % This one does not work. Why?
+\define@key{setwatermark}{hoffset}[\def\@hos{.}]{\def\@hos{\hspace*{#1}}} 
+\define@key{setwatermark}{voffset}[\def\@vos{.}]{\def\@vos{\vspace*{#1}}} 
+\define@key{setwatermark}{alpha}[\def\@alpha{0.7}]{\def\@alpha{#1}} 
+
+\def\setwatermark{\@ifnextchar[\@setwatermark{\@setwatermark[]}}
+\def\@setwatermark[#1]#2{%
+  \setkeys{setwatermark}{#1}%
+  \def\@watermark{#2}
+}
+% \newcommand{\setwatermark}[1]{\def\@watermark{#1}}
+\setwatermark{}   % Empty initialization
+
+
+\mode<presentation>
+
+  % http://www.colorcombos.com/color-scheme-275.html
+  \definecolor{destacado}{HTML}{515151} % gris oscuro
+  \definecolor{normal}{HTML}{797979}  % gris medio
+  \definecolor{fondo}{HTML}{e6e6e6}  % gris claro
+  
+  \definecolor{logo}{HTML}{8E8E8E} % el gris del logo
+  
+  % para el logo en el footer
+  \def\logo{%
+      \raisebox{-1.1ex}{\includegraphics[width=3.3ex]{img/logo1.png}}%
+  }
+ 
+  \setbeamercolor{normal text}{bg=white,fg=normal}
+  \setbeamercolor*{block title}{bg=fondo,fg=destacado}
+  \setbeamercolor*{block body}{bg=fondo,fg=normal}
+  \setbeamercolor{alerted text}{fg=black}
+  
+  \usetheme{default}
+%  \usecolortheme[named=gris]{structure}
+  \usecolortheme[named=destacado]{structure}
+  \usefonttheme{structurebold}
+
+  % overlays semitransparentes
+  \setbeamercovered{transparent}
+  
+  % footer (contador de diapos, nombre jornadas)
+  \setbeamercolor{section in foot}{fg=fondo, bg=logo}
+  \setbeamertemplate{footline}{
+      \leavevmode%
+      \hbox{%
+      \begin{beamercolorbox}[wd=.023\paperwidth,ht=2.25ex,dp=1ex,left]{section in foot}%
+        \usebeamerfont{logo in head/foot}\logo
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.377\paperwidth,ht=2.25ex,dp=1ex,center]{section in foot}%
+        \usebeamerfont{institute in head/foot}\insertshortinstitute
+      \end{beamercolorbox}%
+      \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{section in foot}%
+        \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+      \end{beamercolorbox}}%
+      \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{section in foot}%
+        \usebeamerfont{title in head/foot}\insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+      \end{beamercolorbox}
+      \vskip0pt%
+  }
+
+  % eliminar íconos de nav.
+  \setbeamertemplate{navigation symbols}{}
+  
+  % bloques
+  \setbeamertemplate{blocks}[rounded][shadow=false]
+
+  % especificación global para listas
+  %\beamerdefaultoverlayspecification{<+-| alert@+>}
+  
+  % márgenes
+  \setbeamersize{text margin left=0.4cm,text margin right=0.4cm}
+  
+  \setbeamertemplate{background}{
+  \parbox[c][\paperheight]{\paperwidth}{%
+    \vfill \hfill 
+    \begin{tikzpicture}
+      %\node[opacity=\@alpha]  % not working. why?
+      \node[opacity=.03]
+      {
+        \@watermark
+      };
+    \end{tikzpicture}
+    \@hos
+    
+    \@vos
+  }
+} 
+
+\mode
+<all>
