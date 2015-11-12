@@ -26,8 +26,8 @@ En este directorio se proveen:
 - `demo.tex`: Un documento \LaTeX\ que muestra la sintaxis básica para la creación de diapositivas.
 - `demo.pdf`: El documento PDF producto de la compilación del documento anterior.
 - `presentacion.tex`: El documento \LaTeX\ cuya intención es servir como plantilla para las presentaciones que preparen los ponentes.
-- `README.pdf`: La documentación con instrucciones sobre cómo usar la plantilla preparada para las presentaciones de las Jornadas Técnicas del GUL, en formato PDF.
-- `README.md`: El documento con sintaxis Markdown que da origen al README en PDF^[\ El documento en PDF ha sido generado utilizando Pandoc. Puedes encontrar una breve introducción a Pandoc en la presentación que hizo Rafael Medina para las XXVI jornadas, disponible en <http://archive.rmedgar.com/talks/pandoc_markdown/>.]. Por si no usas interfaz gráfica y prefieres leer el documento desde la terminal. Al fin y al cabo, todos sabemos que un auténtico linuxero lo hace todo desde la terminal.
+- `instrucciones.pdf`: La documentación con instrucciones sobre cómo usar la plantilla preparada para las presentaciones de las Jornadas Técnicas del GUL, en formato PDF.
+- `instrucciones.md`: El documento con sintaxis Markdown que da origen a las instrucciones en PDF^[\ El documento en PDF ha sido generado utilizando Pandoc. Puedes encontrar una breve introducción a Pandoc en la presentación que hizo Rafael Medina para las XXVI jornadas, disponible en <http://archive.rmedgar.com/talks/pandoc_markdown/>.]. Por si no usas interfaz gráfica y prefieres leer el documento desde la terminal. Al fin y al cabo, todos sabemos que un auténtico linuxero lo hace todo desde la terminal.
 - El directorio `img/`: Contiene el logo del GUL (`logo1.png`). También puedes utilizar este directorio para las imágenes que incluyas en tu propia presentación.
 
 Realmente, para utilizar la plantilla para preparar tu presentación tan solo necesitas los siguientes contenidos:
