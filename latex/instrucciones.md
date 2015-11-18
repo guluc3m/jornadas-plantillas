@@ -63,6 +63,8 @@ Para utilizar la plantilla en tu presentación, tan solo tienes que abrir el doc
 
 Si tienes dudas sobre la sintaxis básica para la generación de diapositivas usando \LaTeX\, siempre puedes recurrir a la pequeña demo `demo.tex` que acompaña a este documento. `demo.pdf` muestra cómo quedan las cosas.
 
+La plantilla por defecto está configurada para generar las diapositivas en ratio de aspecto 4:3, ya que es el ratio de aspecto de los proyectores de la universidad. Sin embargo, si quieres utilizarla para otros ratios de aspecto, tan solo tienes que cambiar la primera línea de la presentación. Por ejemplo, si quisieras trabajar con formato 16:9 (estándar widescreen), simplemente tendrías que cambiar `\documentclass[aspectratio=43]{beamer}` por `\documentclass[aspectratio=169]{beamer}`.
+
 ## Generación del PDF con la presentación
 
 De nuevo, suponemos que sabes generar presentaciones a partir de documentos \LaTeX\. Si no, ya sabes, `GIYF`.
