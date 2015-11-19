@@ -84,7 +84,8 @@ Una solución cutre pero efectiva a estos dos problemas es simplemente usar la s
 
 ```
 $> pdflatex presentacion.tex; pdflatex presentacion.tex
-$> rm *.aux *.log *.nav *.out *.snm *.toc *.vrb
+$> find . -type f \( -iname \*.aux -o -iname \*.log -o -iname \*.nav 
+   -o -iname \*.out -o -iname \*.snm -o -iname \*.toc \) -delete
 ```
 
 Si te aburres y te apetece currarte un script que proporcione una solución más elegante, no dudes en mandarnos tu pull request.
