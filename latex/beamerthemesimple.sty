@@ -76,6 +76,9 @@
   \setbeamercovered{transparent}
   
   % customize title page
+  \def\twitter#1{\def\@twitter{#1}}
+  \newcommand{\inserttwitter}{\@twitter}
+  
   \def\titlecontent{
     \usebeamerfont{title}\usebeamercolor[destacado]{title}\inserttitle
     \par
@@ -83,6 +86,8 @@
     \par
     \bigskip
     \usebeamerfont{author}\usebeamercolor[normal]{author}\insertauthor
+    \par
+    \usebeamerfont{author}\usebeamercolor[normal]{author}\inserttwitter
     \par
     \bigskip
     \usebeamerfont{institute}\usebeamercolor[normal]{institute}\insertinstitute
@@ -156,3 +161,4 @@
 
 \mode
 <all>
+
