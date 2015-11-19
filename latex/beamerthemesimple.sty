@@ -47,6 +47,9 @@
 
 \mode<presentation>
 
+  % define margin
+  \def\marginsize{0.4cm}
+
   % http://www.colorcombos.com/color-scheme-275.html
   \definecolor{destacado}{HTML}{515151} % gris oscuro
   \definecolor{normal}{HTML}{797979}  % gris medio
@@ -55,8 +58,8 @@
   \definecolor{logo}{HTML}{8E8E8E} % el gris del logo
   
   % para el logo en el footer
-  \def\logo{%
-      \raisebox{-1.1ex}{\includegraphics[width=3.3ex]{img/logo1.png}}%
+  \def\logoimage{%
+      \raisebox{-1.1ex}{\includegraphics[width=3.3ex]{\inserttitlegraphic}}%
   }
  
   \setbeamercolor{normal text}{bg=white,fg=normal}
@@ -72,13 +75,44 @@
   % overlays semitransparentes
   \setbeamercovered{transparent}
   
+  % customize title page
+  \def\titlecontent{
+    \usebeamerfont{title}\usebeamercolor[destacado]{title}\inserttitle
+    \par
+    \usebeamerfont{subtitle}\usebeamercolor[destacado]{subtitle}\insertsubtitle
+    \par
+    \bigskip
+    \usebeamerfont{author}\usebeamercolor[normal]{author}\insertauthor
+    \par
+    \bigskip
+    \usebeamerfont{institute}\usebeamercolor[normal]{institute}\insertinstitute
+    \par
+    \usebeamerfont{date}\usebeamercolor[normal]{date}\insertdate
+    \par
+  }
+  
+  \setbeamertemplate{title page}{%
+    \hyphenpenalty 10000
+    \hspace*{-\marginsize}\parbox[c][\paperheight][c]{\paperwidth}{
+        \begin{center}
+            \begin{tikzpicture}
+                \node[opacity=0.3] {\includegraphics[height=7cm]{\inserttitlegraphic}};
+                \node[align=center, text width=0.95\paperwidth]{
+                    \titlecontent
+                };
+            \end{tikzpicture}
+        \end{center}
+    }
+    
+  }
+  
   % footer (contador de diapos, nombre jornadas)
   \setbeamercolor{section in foot}{fg=fondo, bg=logo}
   \setbeamertemplate{footline}{
       \leavevmode%
       \hbox{%
       \begin{beamercolorbox}[wd=.023\paperwidth,ht=2.25ex,dp=1ex,left]{section in foot}%
-        \usebeamerfont{logo in head/foot}\logo
+        \usebeamerfont{logo in head/foot}\logoimage
       \end{beamercolorbox}%
       \begin{beamercolorbox}[wd=.377\paperwidth,ht=2.25ex,dp=1ex,center]{section in foot}%
         \usebeamerfont{institute in head/foot}\insertshortinstitute
@@ -102,7 +136,7 @@
   %\beamerdefaultoverlayspecification{<+-| alert@+>}
   
   % márgenes
-  \setbeamersize{text margin left=0.4cm,text margin right=0.4cm}
+  \setbeamersize{text margin left=\marginsize,text margin right=\marginsize}
   
   \setbeamertemplate{background}{
   \parbox[c][\paperheight]{\paperwidth}{%
