@@ -76,7 +76,7 @@
   \setbeamercovered{transparent}
   
   % customize title page
-  \def\twitter#1{\def\@twitter{#1}}
+  \def\twitter#1{\def\@twitter{\href{https://twitter.com/#1}{@#1}}}
   \newcommand{\inserttwitter}{\@twitter}
   
   \def\titlecontent{
@@ -93,6 +93,9 @@
     \usebeamerfont{institute}\usebeamercolor[normal]{institute}\insertinstitute
     \par
     \usebeamerfont{date}\usebeamercolor[normal]{date}\insertdate
+    \par
+    % webpage plug
+    \usebeamerfont{url}\usebeamercolor[normal]{url}\href{https://gul.uc3m.es}{gul.uc3m.es}
     \par
   }
   
