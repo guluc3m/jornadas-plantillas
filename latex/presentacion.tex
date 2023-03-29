@@ -7,20 +7,21 @@
 
 \usepackage[utf8]{inputenc} % No olvides utilizar UTF8, especialmente si tu presentación está en castellano
 
-\def\edicion{ % Cambiar para las siguientes jornadas
-XXXV
-}
-\def\fecha{ % Cambiar para las siguientes jornadas
-Abril 2023
-}
+
+\def\edicion{XXXV} % Edición de las jornadas
+\def\fecha{Abril 2023} % Fecha de las jornadas
 
 \title{Tu titulo} % Modifica el título de la presentación a tu gusto
-\subtitle{Tu subtitulo} % Incluye un subtítulo si lo ves necesario
-\author{Tu nombre} % Cambia el autor de la presentación.
+\subtitle{Tu subtitulo} % Incluye un subtítulo si lo ves necesario, o bórralo
+\author{Tu nombre} % Cambia el autor de la presentación
 \twitter{TuTwitter} % Pon tu Twitter o déjalo en blanco
-\institute{\edicion Jornadas Técnicas del GUL} % Esto no lo cambies
-\date{\fecha} % Esto tampoco
 
+% Esto no lo cambies
+\institute{\edicion \ Jornadas Técnicas del GUL}
+\date{\fecha}
+
+
+% Página principal (no tocar)
 \titlegraphic{img/logo1.png}
 
 \begin{document}
@@ -33,7 +34,7 @@ Abril 2023
 }
 \addtocounter{framenumber}{-1}
 
-%\setwatermark{\includegraphics[height=8cm]{img/logo1.png}}
+%\setwatermark{\includegraphics[height=8cm]{img/logo1.png}} % Marca de agua (opcional)
 
 % ------------------------------------------------------------------------------------------
 % La presentación empieza aquí. La primera diapositiva puede dejarse tal cual o sustituirse.
@@ -41,7 +42,7 @@ Abril 2023
 
 \begin{frame}
     \frametitle{Tabla de contenidos} % Puedes ponerle un título más chulo a la diapositiva con el índice de contenidos o dejar éste
-    \tableofcontents % Para poblar la tabla de contenidos debes utilizar /section y /subsection apropiadamente (ver demo)
+    \tableofcontents % Para poblar la tabla de contenidos debes utilizar \section y \subsection apropiadamente (ver demo)
 \end{frame}
 
 \begin{frame}

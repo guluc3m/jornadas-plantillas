@@ -7,17 +7,21 @@
 
 \usepackage[utf8]{inputenc} % No olvides utilizar UTF8, especialmente si tu presentación está en castellano
 
-\def\edicion{ % Cambiar para las siguientes jornadas
-XXVII
-}
 
-\title{Demo} % Modifica el título de la presentación a tu gusto
-\subtitle{Basada en la demo de introducción a Beamer de ShareLaTeX.com y el tema Simple por Facundo Muñoz} % Incluye un subtítulo si lo ves necesario
-\author{GUL} % Cambia el autor de la presentación.
-\twitter{guluc3m} % Pon tu Twitter o déjalo en blanco
-\institute{\edicion Jornadas Técnicas del GUL} % Esto no lo cambies
-\date{Noviembre 2015} % Esto tampoco
+\def\edicion{XXXV} % Edición de las jornadas
+\def\fecha{Abril 2023} % Fecha de las jornadas
 
+\title{Demo} % Título de la presentación
+\subtitle{Basada en la demo de introducción a Beamer de ShareLaTeX.com y el tema Simple por Facundo Muñoz} % Subtítulo
+\author{GUL} % Autor de la presentación
+\twitter{guluc3m} % Twitter
+
+% Esto no lo cambies
+\institute{\edicion \ Jornadas Técnicas del GUL}
+\date{\fecha}
+
+
+% Página principal (no tocar)
 \titlegraphic{img/logo1.png}
 
 \begin{document}
@@ -30,14 +34,14 @@ XXVII
 }
 \addtocounter{framenumber}{-1}
 
-%\setwatermark{\includegraphics[height=8cm]{img/logo1.png}}
+%\setwatermark{\includegraphics[height=8cm]{img/logo1.png}} % Marca de agua (opcional)
 
 % ------------------------------------------------------------------------------------------
 % La presentación empieza aquí. La primera diapositiva puede dejarse tal cual o sustituirse.
 % ------------------------------------------------------------------------------------------
 
 \begin{frame}
-    \frametitle{Tabla de contenidos} % Puedes ponerle un título más chulo a la diapositiva con el índice de contenidos o dejar éste
+    \frametitle{Tabla de contenidos} % Título de la diapositiva con el índice de contenidos
     \tableofcontents
 \end{frame}
 
